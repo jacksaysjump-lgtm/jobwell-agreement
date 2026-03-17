@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Candidate Access Agreement — Jobwell Staffing</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#12151f;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:32px 16px 48px}
+.screen{display:none;flex-direction:column;align-items:center;width:100%}
+.screen.active{display:flex}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:480px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.35)}
+.modal-inner{padding:28px 28px 22px}
+.modal-footer{text-align:center;padding:11px 24px 14px;border-top:1px solid #dde2f0;font-size:11px;color:#9aa0b4;line-height:1.6;background:#f4f6fc}
+.admin-wrap{background:#fff;border-radius:16px;width:100%;max-width:720px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.35)}
+.admin-hdr{padding:14px 22px;background:#f4f6fc;border-bottom:1px solid #dde2f0;display:flex;align-items:center;justify-content:space-between}
+.admin-tabs{display:flex;background:#e8ecf5;border-bottom:2px solid #b0bada;padding:0 20px;gap:4px}
+.panel{padding:22px;display:none}
+.panel.active{display:block}
+.field-label{display:block;font-size:11px;font-weight:700;color:#4a5470;margin-bottom:5px;text-transform:uppercase;letter-spacing:.07em}
+.field{margin-bottom:14px}
+.sec{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#8a93b4;border-bottom:1px solid #dde2f0;padding-bottom:10px;margin-bottom:16px}
+.hint{font-size:11px;color:#9aa0b4;margin-top:4px;line-height:1.5}
+.err-msg{font-size:12px;color:#c0392b;margin-top:5px;display:none}
+.ok-msg{font-size:12px;color:#1a7a4a;margin-top:5px;display:none}
+.banner{border-radius:8px;padding:10px 14px;font-size:12px;line-height:1.6;margin-top:10px;display:none}
+.b-ok{background:#e8f5ee;border:1.5px solid #a8dfc0;color:#1a7a4a}
+.b-warn{background:#fff9ed;border:1.5px solid #f0d88a;color:#7a5800}
+.b-info{background:#eef1ff;border:1.5px solid #b0bada;color:#2d3a6b;word-break:break-all;font-family:'Courier New',monospace;font-size:11.5px}
+.agr-box{border:1px solid #c8cfe8;border-radius:10px;padding:14px 16px;max-height:220px;overflow-y:auto;font-size:11.5px;line-height:1.9;color:#4a5470;background:#f0f3fa;font-family:'Courier New',monospace;white-space:pre-wrap;margin-bottom:14px}
+.agr-box::-webkit-scrollbar{width:4px}
+.agr-box::-webkit-scrollbar-thumb{background:#b0bada;border-radius:2px}
+.consent{background:#e8ecfa;border:1.5px solid #c8d0f0;border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:12.5px;color:#4a5470;line-height:1.7}
+.consent strong{color:#4f62c2;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.doc-icon{width:42px;height:42px;border-radius:10px;background:#e8ecfa;border:1px solid #c8d0f0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.inp{display:block;width:100%;padding:10px 13px;font-size:13px;font-family:inherit;color:#1a2235;background:#eef1ff;border:1.5px solid #b0bada;border-radius:8px;outline:none;box-sizing:border-box}
+.inp:focus{border-color:#6b7fdb;box-shadow:0 0 0 3px rgba(107,127,219,.18)}
+.btn-agree{display:block;width:100%;padding:14px;font-size:14px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;background:#4f62c2;color:#fff;border:3px solid #4f62c2;border-radius:10px;cursor:pointer;margin-bottom:10px;text-align:center;-webkit-appearance:none;appearance:none}
+.btn-agree:hover{background:#3a4da8;border-color:#3a4da8}
+.btn-sec{display:block;width:100%;padding:13px;font-size:14px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;background:#dde3f5;color:#2d3a6b;border:3px solid #8a9ad0;border-radius:10px;cursor:pointer;text-align:center;-webkit-appearance:none;appearance:none}
+.btn-blue{background:#4f62c2;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;cursor:pointer;-webkit-appearance:none;appearance:none}
+.btn-blue:hover{background:#3a4da8}
+.btn-gray{background:#e8ecf5;color:#2d3a6b;border:1.5px solid #8a9ad0;border-radius:7px;padding:6px 13px;font-size:12px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;cursor:pointer;-webkit-appearance:none;appearance:none}
+.btn-red{background:#fdecea;color:#c0392b;border:1.5px solid #e8a09a;border-radius:7px;padding:6px 11px;font-size:12px;font-family:inherit;font-weight:600;cursor:pointer;-webkit-appearance:none;appearance:none}
+.btn-red-solid{background:#c0392b;color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:12px;font-family:inherit;font-weight:600;cursor:pointer;-webkit-appearance:none;appearance:none}
+.btn-wide{display:block;width:100%;padding:12px;font-size:14px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;background:#4f62c2;color:#fff;border:3px solid #4f62c2;border-radius:10px;cursor:pointer;text-align:center;-webkit-appearance:none;appearance:none}
+.tbl-wrap{border:1.5px solid #dde2f0;border-radius:8px;overflow:hidden;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
+th{text-align:left;padding:7px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#8a93b4;border-bottom:1px solid #dde2f0;font-weight:700;background:#f4f6fc;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid #dde2f0;color:#4a5470;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle}
+td:first-child{font-weight:600;color:#1a2235}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafbfd}
+.badge-active{display:inline-block;background:#e8f5ee;color:#1a7a4a;border:1px solid #a8dfc0;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.badge-revoked{display:inline-block;background:#fdecea;color:#c0392b;border:1px solid #e8a09a;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.confirm-box{background:#fff9ed;border:1.5px solid #f0d88a;border-radius:8px;padding:12px 14px;margin-top:10px;display:none}
+.confirm-box p{font-size:12px;color:#7a5800;margin-bottom:10px;line-height:1.6}
+.confirm-box-btns{display:flex;gap:8px}
+.link-result{background:#eef1ff;border:1.5px solid #b0bada;border-radius:10px;padding:14px 16px;margin-top:14px;display:none}
+.link-result p{font-size:11px;font-weight:700;color:#8a93b4;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.link-result .link-url{font-family:'Courier New',monospace;font-size:12px;color:#2d3a6b;word-break:break-all;line-height:1.6;margin-bottom:10px}
+.loading-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);animation:pulse 1.2s ease-in-out infinite}
+.loading-dot:nth-child(2){animation-delay:.2s}
+.loading-dot:nth-child(3){animation-delay:.4s}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="s-loading" class="screen active">
+  <div style="margin-top:80px;text-align:center">
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:16px">
+      <span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>
+    </div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.3)">Loading agreement&hellip;</div>
+  </div>
+</div>
+
+<!-- NO VALID TOKEN -->
+<div id="s-nolink" class="screen">
+  <div class="modal" style="max-width:400px">
+    <div class="modal-inner" style="text-align:center;padding:40px 28px 32px">
+      <div style="width:48px;height:48px;border-radius:50%;background:#fff9ed;border:1.5px solid #f0d88a;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 6v5M10 14h.01" stroke="#ba8b00" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="8" stroke="#ba8b00" stroke-width="1.5"/></svg>
+      </div>
+      <div style="font-size:17px;font-weight:700;color:#1a2235;margin-bottom:10px">Invalid or expired link</div>
+      <p style="font-size:13px;color:#4a5470;line-height:1.7">This link is not valid or has expired. Please contact Jobwell Staffing LLC for a new link.</p>
+    </div>
+    <div class="modal-footer">Jobwell Staffing LLC</div>
+  </div>
+  <div style="margin-top:14px"><button id="btn-nolink-admin" style="background:none;border:none;color:rgba(255,255,255,0.18);font-size:11px;font-family:inherit;cursor:pointer;padding:4px 8px">Admin</button></div>
+</div>
+
+<!-- SIGN -->
+<div id="s-sign" class="screen">
+  <div class="modal">
+    <div class="modal-inner">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px">
+        <div class="doc-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 3h7l4 4v10a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#6b7fdb" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 3v4h4M7 10h6M7 13h4" stroke="#6b7fdb" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size:16px;font-weight:700;color:#1a2235;line-height:1.2" id="agr-title">Candidate Access Agreement</div>
+          <div style="font-size:12px;color:#9aa0b4;margin-top:2px">Jobwell Staffing LLC &nbsp;&middot;&nbsp; <span id="agr-ver">v1.0</span></div>
+        </div>
+      </div>
+      <div class="agr-box" id="agr-body"></div>
+      <div class="consent">I have read and agree to the terms above. I understand that hiring any introduced candidate outside of Jobwell Staffing LLC&#39;s placement process will result in a <strong>circumvention fee</strong>, and that this agreement is binding upon my electronic acceptance.</div>
+      <div class="sec">Your information</div>
+      <div class="row2" style="margin-bottom:14px">
+        <div class="field"><label class="field-label" for="f-name">Full name</label><input id="f-name" class="inp" type="text" autocomplete="name" placeholder="Jane Smith"></div>
+        <div class="field"><label class="field-label" for="f-company">Company</label><input id="f-company" class="inp" type="text" autocomplete="organization" placeholder="Acme Health"></div>
+      </div>
+      <div class="field"><label class="field-label" for="f-email">Work email</label><input id="f-email" class="inp" type="email" autocomplete="email" placeholder="jane@company.com"></div>
+      <div class="sec">Electronic signature</div>
+      <div class="field">
+        <label class="field-label" for="f-confirm">Re-type your full name to sign</label>
+        <input id="f-confirm" class="inp" type="text" autocomplete="off" placeholder="Your full name">
+        <div id="confirm-mismatch" class="err-msg">Name doesn&#39;t match &mdash; check for typos.</div>
+        <div id="confirm-match" class="ok-msg">&#10003; Signature confirmed.</div>
+      </div>
+      <div id="sign-err" style="background:#fff0ee;border:1.5px solid #e8a09a;border-radius:8px;padding:10px 14px;font-size:13px;color:#c0392b;margin-bottom:12px;display:none;line-height:1.6"></div>
+      <button id="btn-agree" class="btn-agree">I agree and continue</button>
+      <button id="btn-decline" class="btn-sec">I do not agree</button>
+    </div>
+    <div class="modal-footer">Protected link &nbsp;&middot;&nbsp; Jobwell Staffing LLC &nbsp;&middot;&nbsp; Acceptance is timestamped and logged</div>
+  </div>
+  <div style="margin-top:14px"><button id="btn-sign-admin" style="background:none;border:none;color:rgba(255,255,255,0.18);font-size:11px;font-family:inherit;cursor:pointer;padding:4px 8px">Admin</button></div>
+</div>
+
+<!-- DECLINE -->
+<div id="s-decline" class="screen">
+  <div class="modal" style="max-width:400px">
+    <div class="modal-inner" style="text-align:center;padding:36px 28px 28px">
+      <div style="width:48px;height:48px;border-radius:50%;background:#fdecea;border:1.5px solid #e8a09a;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4l10 10M14 4L4 14" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div style="font-size:17px;font-weight:700;color:#1a2235;margin-bottom:8px">Agreement declined</div>
+      <p style="font-size:13px;color:#4a5470;line-height:1.7;margin-bottom:20px">You have chosen not to accept the Candidate Access Agreement. Access to the candidate overview is not available without acceptance.</p>
+      <button id="btn-decline-back" style="display:inline-block;padding:11px 24px;font-size:13px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;background:#dde3f5;color:#2d3a6b;border:3px solid #8a9ad0;border-radius:10px;cursor:pointer;-webkit-appearance:none;appearance:none">Return to agreement</button>
+    </div>
+    <div class="modal-footer">Jobwell Staffing LLC</div>
+  </div>
+</div>
+
+<!-- DONE (shown only when no redirect URL configured) -->
+<div id="s-done" class="screen">
+  <div class="modal" style="max-width:400px">
+    <div class="modal-inner" style="text-align:center;padding:36px 28px 28px">
+      <div style="width:48px;height:48px;border-radius:50%;background:#e8f5ee;border:1.5px solid #a8dfc0;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5l5 5 9-9" stroke="#1a7a4a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-size:17px;font-weight:700;color:#1a2235;margin-bottom:8px">Agreement accepted</div>
+      <p id="done-msg" style="font-size:13px;color:#4a5470;line-height:1.7;margin-bottom:18px"></p>
+      <div style="background:#f4f6fc;border:1.5px solid #dde2f0;border-radius:8px;padding:12px 14px;text-align:left">
+        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#9aa0b4;margin-bottom:3px">Recorded at</p>
+        <p id="done-ts" style="font-size:13px;font-weight:600;color:#1a2235"></p>
+      </div>
+    </div>
+    <div class="modal-footer">Protected link &nbsp;&middot;&nbsp; Jobwell Staffing LLC &nbsp;&middot;&nbsp; Acceptance is timestamped and logged</div>
+  </div>
+</div>
+
+<!-- SETUP -->
+<div id="s-setup" class="screen">
+  <div class="modal" style="max-width:380px">
+    <div class="modal-inner">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px">
+        <div class="doc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="2" stroke="#6b7fdb" stroke-width="1.5"/><path d="M7 8h6M7 11h4" stroke="#6b7fdb" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div><div style="font-size:16px;font-weight:700;color:#1a2235">Set admin password</div><div style="font-size:12px;color:#9aa0b4;margin-top:2px">First-time setup &mdash; required to continue</div></div>
+      </div>
+      <p style="font-size:13px;color:#4a5470;line-height:1.7;margin-bottom:16px">Choose a strong password to protect your audit log and settings.</p>
+      <div class="field"><label class="field-label" for="setup-pw1">New password</label><input id="setup-pw1" class="inp" type="password" autocomplete="new-password" placeholder="Min. 8 characters"></div>
+      <div class="field"><label class="field-label" for="setup-pw2">Confirm password</label><input id="setup-pw2" class="inp" type="password" autocomplete="new-password" placeholder="Re-type password"></div>
+      <div id="setup-err" class="err-msg" style="margin-bottom:10px"></div>
+      <button id="btn-setup" class="btn-wide">Set password &amp; continue</button>
+    </div>
+    <div class="modal-footer">Jobwell Staffing LLC</div>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div id="s-login" class="screen">
+  <div class="modal" style="max-width:360px">
+    <div class="modal-inner">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px">
+        <div class="doc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="2" stroke="#6b7fdb" stroke-width="1.5"/><path d="M7 8h6M7 11h4" stroke="#6b7fdb" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div><div style="font-size:16px;font-weight:700;color:#1a2235">Admin login</div><div style="font-size:12px;color:#9aa0b4;margin-top:2px">Agreement manager</div></div>
+      </div>
+      <div class="field"><label class="field-label" for="l-pw">Password</label><input id="l-pw" class="inp" type="password" autocomplete="current-password" placeholder="Admin password"></div>
+      <div id="l-err" class="err-msg" style="margin-bottom:10px"></div>
+      <div style="display:flex;gap:10px">
+        <button id="btn-login" style="flex:1;padding:11px;font-size:14px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;background:#4f62c2;color:#fff;border:3px solid #4f62c2;border-radius:10px;cursor:pointer;-webkit-appearance:none;appearance:none">Enter</button>
+        <button id="btn-login-back" style="padding:11px 18px;font-size:14px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:700;background:#dde3f5;color:#2d3a6b;border:3px solid #8a9ad0;border-radius:10px;cursor:pointer;-webkit-appearance:none;appearance:none">Back</button>
+      </div>
+    </div>
+    <div class="modal-footer">Jobwell Staffing LLC</div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="s-admin" class="screen">
+  <div class="admin-wrap">
+    <div class="admin-hdr">
+      <div><div style="font-size:14px;font-weight:700;color:#1a2235">Jobwell Staffing</div><div style="font-size:11px;color:#9aa0b4;margin-top:1px">Agreement manager</div></div>
+      <button id="btn-exit" class="btn-gray">&#8592; Exit</button>
+    </div>
+    <!-- Admin loading state -->
+    <div id="admin-loading" style="padding:40px;text-align:center;color:#9aa0b4;font-size:13px;display:none">Loading&hellip;</div>
+    <div id="admin-body" style="display:none">
+      <div class="admin-tabs">
+        <button id="tab-links" style="padding:11px 17px;font-size:13px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:600;border:none;border-bottom:3px solid #4f62c2;background:#fff;color:#4f62c2;cursor:pointer;-webkit-appearance:none;appearance:none;margin-bottom:-2px">Links</button>
+        <button id="tab-audit" style="padding:11px 17px;font-size:13px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:500;border:none;border-bottom:3px solid transparent;background:transparent;color:#6a7490;cursor:pointer;-webkit-appearance:none;appearance:none;margin-bottom:-2px">Audit log</button>
+        <button id="tab-settings" style="padding:11px 17px;font-size:13px;font-family:'Segoe UI',system-ui,sans-serif;font-weight:500;border:none;border-bottom:3px solid transparent;background:transparent;color:#6a7490;cursor:pointer;-webkit-appearance:none;appearance:none;margin-bottom:-2px">Settings</button>
+      </div>
+
+      <!-- LINKS TAB -->
+      <div id="panel-links" class="panel active">
+        <div class="sec">Generate a new signing link</div>
+        <p style="font-size:13px;color:#4a5470;line-height:1.7;margin-bottom:16px">Each client or send gets its own unique link. The deck URL is never exposed to the client — it's only returned by the server after they sign.</p>
+        <div class="row2">
+          <div class="field">
+            <label class="field-label" for="new-label">Label <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#9aa0b4">(optional)</span></label>
+            <input id="new-label" class="inp" type="text" placeholder="e.g. Acme Health &mdash; Sr PM">
+            <p class="hint">Helps you identify this send in the audit log.</p>
+          </div>
+          <div class="field">
+            <label class="field-label" for="new-deck-url">Deck URL</label>
+            <input id="new-deck-url" class="inp" type="url" placeholder="https://drive.google.com/&hellip;">
+            <p class="hint">Must begin with https://</p>
+          </div>
+        </div>
+        <div id="new-link-err" class="err-msg" style="margin-bottom:8px"></div>
+        <button id="btn-gen-link" class="btn-blue">Generate signing link</button>
+
+        <!-- Generated link result -->
+        <div id="link-result" class="link-result">
+          <p>Signing link &mdash; send this to your client</p>
+          <div id="link-result-url" class="link-url"></div>
+          <div style="display:flex;gap:8px">
+            <button id="btn-copy-new-link" class="btn-blue" style="padding:8px 16px;font-size:12px">Copy link</button>
+            <button id="btn-gen-another" class="btn-gray">Generate another</button>
+          </div>
+        </div>
+
+        <!-- Active links table -->
+        <div style="margin-top:24px">
+          <div class="sec" style="display:flex;justify-content:space-between;align-items:center">
+            <span id="links-count">0 active links</span>
+          </div>
+          <!-- Inline revoke confirmation -->
+          <div id="revoke-confirm" class="confirm-box">
+            <p>Revoke this link? Clients who haven&#39;t signed yet will see an &ldquo;invalid link&rdquo; error. Existing signatures are preserved.</p>
+            <div class="confirm-box-btns">
+              <button id="btn-revoke-yes" class="btn-red-solid">Yes, revoke</button>
+              <button id="btn-revoke-no" class="btn-gray">Cancel</button>
+            </div>
+          </div>
+          <div id="links-empty" style="padding:28px 0;text-align:center;color:#9aa0b4;font-size:13px">No links generated yet.</div>
+          <div id="links-tbl-wrap" style="display:none" class="tbl-wrap">
+            <table>
+              <thead><tr>
+                <th style="width:22%">Label</th>
+                <th style="width:28%">Deck URL</th>
+                <th style="width:14%">Created</th>
+                <th style="width:8%">Sigs</th>
+                <th style="width:28%">Actions</th>
+              </tr></thead>
+              <tbody id="links-rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUDIT TAB -->
+      <div id="panel-audit" class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center" class="sec">
+          <span id="sig-count">0 signatures on record</span>
+          <div style="display:flex;gap:8px">
+            <button id="btn-export" class="btn-gray">Export CSV</button>
+            <button id="btn-clear-all" class="btn-red">Clear all</button>
+          </div>
+        </div>
+        <div id="clear-confirm" class="confirm-box">
+          <p>This will permanently delete all <strong id="clear-n"></strong> signature records. This cannot be undone.</p>
+          <div class="confirm-box-btns">
+            <button id="btn-clear-yes" class="btn-red-solid">Yes, delete all</button>
+            <button id="btn-clear-no" class="btn-gray">Cancel</button>
+          </div>
+        </div>
+        <div id="audit-empty" style="padding:44px 0;text-align:center;color:#9aa0b4;font-size:13px">No signatures recorded yet.</div>
+        <div id="audit-tbl-wrap" style="display:none" class="tbl-wrap">
+          <table>
+            <thead><tr>
+              <th style="width:16%">Name</th>
+              <th style="width:20%">Email</th>
+              <th style="width:15%">Company</th>
+              <th style="width:13%">Signed</th>
+              <th style="width:20%">Label</th>
+              <th style="width:16%">Deck URL</th>
+            </tr></thead>
+            <tbody id="audit-rows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SETTINGS TAB -->
+      <div id="panel-settings" class="panel">
+        <div class="sec">Agreement content</div>
+        <div class="field"><label class="field-label" for="cfg-title">Title</label><input id="cfg-title" class="inp" type="text"></div>
+        <div class="field"><label class="field-label" for="cfg-body-ta">Body</label><textarea id="cfg-body-ta" class="inp" style="min-height:180px;font-family:'Courier New',monospace;font-size:12px;resize:vertical;line-height:1.7"></textarea></div>
+        <div class="sec" style="margin-top:6px">Version &amp; password</div>
+        <div class="row2">
+          <div class="field">
+            <label class="field-label" for="cfg-ver">Agreement version</label>
+            <input id="cfg-ver" class="inp" type="text">
+            <p class="hint">Increment whenever the agreement text changes.</p>
+          </div>
+          <div class="field">
+            <label class="field-label" for="cfg-pw">New admin password</label>
+            <input id="cfg-pw" class="inp" type="password" autocomplete="new-password" placeholder="Leave blank to keep current">
+            <p class="hint">Min. 8 chars. Leave blank to keep current.</p>
+          </div>
+        </div>
+        <button id="btn-settings-save" class="btn-blue">Save changes</button>
+        <div id="settings-ok" class="banner b-ok" style="margin-top:10px">&#10003; Settings saved.</div>
+        <div id="settings-err" class="err-msg" style="margin-top:8px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+var API = '/.netlify/functions/api';
+var currentToken = null; // token from ?t= param
+var adminPw = '';        // stored in memory for session only
+var adminData = null;    // {sigs, tokens, config} cached after load
+var flashTimers = {};
+var busy = false;
+var pendingRevokeToken = null; // token waiting for inline revoke confirmation
+
+/* ── API helper ──────────────────────────────────────────────────── */
+function apiFetch(action, data) {
+  var payload = Object.assign({ action: action }, data || {});
+  var controller = new AbortController();
+  var timer = setTimeout(function() { controller.abort(); }, 15000);
+  return fetch(API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+    signal: controller.signal
+  }).then(function(r) {
+    clearTimeout(timer);
+    return r.json().then(function(d) {
+      if (!r.ok) throw new Error(d.error || 'Server error');
+      return d;
+    });
+  }).catch(function(e) {
+    clearTimeout(timer);
+    if (e.name === 'AbortError') throw new Error('Request timed out. Please check your connection and try again.');
+    throw e;
+  });
+}
+
+/* ── DOM helpers ─────────────────────────────────────────────────── */
+function g(id) { return document.getElementById(id); }
+function esc(v) { return (v == null ? '' : String(v)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function show(s) { document.querySelectorAll('.screen').forEach(function(e){e.classList.remove('active');}); g('s-'+s).classList.add('active'); }
+function setErr(id, msg) { var e = g(id); if (!e) return; e.textContent = msg || ''; e.style.display = msg ? 'block' : 'none'; }
+function flash(id, ms) { var e = g(id); if (!e) return; if (flashTimers[id]) clearTimeout(flashTimers[id]); e.style.display = 'block'; flashTimers[id] = setTimeout(function(){ e.style.display = 'none'; delete flashTimers[id]; }, ms || 3000); }
+function trunc(str, n) { return str && str.length > n ? str.slice(0, n) + '\u2026' : (str || ''); }
+
+/* ── Boot ────────────────────────────────────────────────────────── */
+function boot() {
+  // Extract token from URL
+  var params = new URLSearchParams(window.location.search);
+  currentToken = params.get('t');
+
+  if (currentToken) {
+    // Load agreement from server
+    apiFetch('get-agreement', { token: currentToken }).then(function(d) {
+      g('agr-title').textContent = d.title;
+      g('agr-ver').textContent = 'v' + d.version;
+      g('agr-body').textContent = d.body;
+      show('sign');
+    }).catch(function() {
+      show('nolink');
+    });
+  } else {
+    // No token — show invalid link screen immediately, no round-trip needed
+    show('nolink');
+  }
+
+  wire();
+}
+
+/* ── Wire events ─────────────────────────────────────────────────── */
+function wire() {
+  // Sign form
+  g('f-name').addEventListener('input', function() {
+    g('f-confirm').value = '';
+    g('confirm-mismatch').style.display = 'none';
+    g('confirm-match').style.display = 'none';
+  });
+  g('f-confirm').addEventListener('input', function() {
+    var n = g('f-name').value.trim().toLowerCase();
+    var c = g('f-confirm').value.trim().toLowerCase();
+    g('confirm-mismatch').style.display = (c && c !== n) ? 'block' : 'none';
+    g('confirm-match').style.display = (c && c === n) ? 'block' : 'none';
+  });
+  g('btn-agree').addEventListener('click', doSign);
+  g('btn-decline').addEventListener('click', function(){ show('decline'); });
+  g('btn-sign-admin').addEventListener('click', goAdmin);
+  g('btn-nolink-admin').addEventListener('click', goAdmin);
+
+  // Decline
+  g('btn-decline-back').addEventListener('click', function(){ show('sign'); });
+
+  // Setup
+  g('setup-pw1').addEventListener('keydown', function(e){ if(e.key==='Enter') doSetup(); });
+  g('setup-pw2').addEventListener('keydown', function(e){ if(e.key==='Enter') doSetup(); });
+  g('btn-setup').addEventListener('click', doSetup);
+
+  // Login
+  g('l-pw').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
+  g('btn-login').addEventListener('click', doLogin);
+  g('btn-login-back').addEventListener('click', function(){ show(currentToken ? 'sign' : 'nolink'); });
+
+  // Admin
+  g('btn-exit').addEventListener('click', function(){ show(currentToken ? 'sign' : 'nolink'); });
+  g('tab-links').addEventListener('click', function(){ switchTab('links'); });
+  g('tab-audit').addEventListener('click', function(){ switchTab('audit'); });
+  g('tab-settings').addEventListener('click', function(){ switchTab('settings'); });
+
+  // Links tab
+  g('btn-gen-link').addEventListener('click', genLink);
+  g('btn-copy-new-link').addEventListener('click', function(){ copyText(g('link-result-url').textContent, g('btn-copy-new-link')); });
+  g('btn-gen-another').addEventListener('click', function(){ g('link-result').style.display='none'; g('new-label').value=''; g('new-deck-url').value=''; });
+  g('btn-revoke-yes').addEventListener('click', doRevokeConfirmed);
+  g('btn-revoke-no').addEventListener('click', function(){ g('revoke-confirm').style.display='none'; pendingRevokeToken=null; });
+
+  // Audit tab
+  g('btn-export').addEventListener('click', exportCSV);
+  g('btn-clear-all').addEventListener('click', function(){ g('clear-n').textContent = (adminData && adminData.sigs ? adminData.sigs.length : 0); g('clear-confirm').style.display='block'; });
+  g('btn-clear-yes').addEventListener('click', clearSigs);
+  g('btn-clear-no').addEventListener('click', function(){ g('clear-confirm').style.display='none'; });
+
+  // Settings
+  g('btn-settings-save').addEventListener('click', saveSettings);
+}
+
+/* ── Sign ────────────────────────────────────────────────────────── */
+function doSign() {
+  var n = g('f-name').value.trim();
+  var co = g('f-company').value.trim();
+  var e = g('f-email').value.trim();
+  var c = g('f-confirm').value.trim();
+
+  var msgs = [];
+  if (!n || n.length < 2) msgs.push('Please enter your full name.');
+  if (!co) msgs.push('Please enter your company name.');
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) msgs.push('Please enter a valid work email address.');
+  if (!c || c.toLowerCase() !== n.toLowerCase()) msgs.push('Please re-type your full name exactly to sign.');
+
+  var errEl = g('sign-err');
+  if (msgs.length > 0) {
+    errEl.innerHTML = msgs.map(function(m){ return '\u2022 ' + esc(m); }).join('<br>');
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  if (busy) return;
+  busy = true;
+  var btn = g('btn-agree');
+  btn.textContent = 'Recording\u2026';
+  btn.style.opacity = '0.7';
+
+  apiFetch('sign', { token: currentToken, name: n, company: co, email: e }).then(function(d) {
+    busy = false;
+    btn.textContent = 'I agree and continue';
+    btn.style.opacity = '1';
+    if (d.deckUrl) {
+      // Deck URL returned from server only after signature recorded
+      window.location.href = d.deckUrl;
+    } else {
+      g('done-msg').innerHTML = 'Thank you, <strong>' + esc(n) + '</strong> (' + esc(co) + '). Your agreement is on file with Jobwell Staffing LLC.';
+      g('done-ts').textContent = new Date().toLocaleString();
+      show('done');
+    }
+  }).catch(function(err) {
+    busy = false;
+    btn.textContent = 'I agree and continue';
+    btn.style.opacity = '1';
+    errEl.textContent = err.message || 'Error recording agreement. Please try again.';
+    errEl.style.display = 'block';
+  });
+}
+
+/* ── Admin auth ──────────────────────────────────────────────────── */
+function goAdmin() {
+  g('l-pw').value = '';
+  setErr('l-err', '');
+  // Check if setup needed
+  apiFetch('check-setup').then(function(d) {
+    show(d.needsSetup ? 'setup' : 'login');
+  }).catch(function() { show('login'); });
+}
+
+function doSetup() {
+  var pw1 = g('setup-pw1').value, pw2 = g('setup-pw2').value;
+  setErr('setup-err', '');
+  if (pw1.length < 8) { setErr('setup-err', 'Password must be at least 8 characters.'); return; }
+  if (pw1 !== pw2) { setErr('setup-err', 'Passwords do not match.'); return; }
+  var btn = g('btn-setup'); btn.textContent = 'Setting up\u2026'; btn.style.opacity = '0.7';
+  apiFetch('admin-setup', { password: pw1 }).then(function() {
+    adminPw = pw1;
+    g('setup-pw1').value = ''; g('setup-pw2').value = '';
+    btn.textContent = 'Set password & continue'; btn.style.opacity = '1';
+    loadAdmin();
+  }).catch(function(err) {
+    btn.textContent = 'Set password & continue'; btn.style.opacity = '1';
+    setErr('setup-err', err.message);
+  });
+}
+
+function doLogin() {
+  var pw = g('l-pw').value;
+  setErr('l-err', '');
+  var btn = g('btn-login'); btn.textContent = 'Checking\u2026'; btn.style.opacity = '0.7';
+  apiFetch('admin-login', { password: pw }).then(function() {
+    adminPw = pw;
+    g('l-pw').value = '';
+    btn.textContent = 'Enter'; btn.style.opacity = '1';
+    loadAdmin();
+  }).catch(function(err) {
+    btn.textContent = 'Enter'; btn.style.opacity = '1';
+    setErr('l-err', err.message);
+  });
+}
+
+/* ── Admin panel ─────────────────────────────────────────────────── */
+function loadAdmin() {
+  show('admin');
+  g('admin-loading').style.display = 'block';
+  g('admin-body').style.display = 'none';
+  apiFetch('admin-get-data', { password: adminPw }).then(function(d) {
+    adminData = d;
+    g('admin-loading').style.display = 'none';
+    g('admin-body').style.display = 'block';
+    switchTab('links');
+    renderLinks();
+    renderAudit();
+    loadSettingsFields();
+  }).catch(function(err) {
+    g('admin-loading').textContent = 'Error loading data: ' + err.message;
+  });
+}
+
+function loadSettingsFields() {
+  var c = (adminData && adminData.config) || {};
+  g('cfg-title').value = c.title || 'Candidate Access Agreement';
+  g('cfg-body-ta').value = c.body || '';
+  g('cfg-ver').value = c.version || '1.0';
+  g('cfg-pw').value = '';
+}
+
+function renderLinks() {
+  var tokens = adminData.tokens || {};
+  var sigs = adminData.sigs || [];
+  var keys = Object.keys(tokens);
+
+  g('links-count').textContent = keys.length + ' active link' + (keys.length !== 1 ? 's' : '');
+  g('links-empty').style.display = keys.length === 0 ? 'block' : 'none';
+  g('links-tbl-wrap').style.display = keys.length > 0 ? 'block' : 'none';
+
+  // Count sigs per token
+  var sigCounts = {};
+  sigs.forEach(function(s) { sigCounts[s.token] = (sigCounts[s.token] || 0) + 1; });
+
+  var host = window.location.origin;
+
+  g('links-rows').innerHTML = keys.sort(function(a, b) {
+    return new Date(tokens[b].createdAt) - new Date(tokens[a].createdAt);
+  }).map(function(tok) {
+    var td = tokens[tok];
+    var sigUrl = host + '/?t=' + tok;
+    var count = sigCounts[tok] || 0;
+    var age = Date.now() - new Date(td.createdAt).getTime();
+    var expired = age > 90 * 24 * 60 * 60 * 1000;
+    return '<tr>' +
+      '<td title="' + esc(td.label || '') + '">' + esc(td.label || '\u2014') + '</td>' +
+      '<td title="' + esc(td.deckUrl) + '"><a href="' + esc(td.deckUrl) + '" target="_blank" style="color:#4f62c2;text-decoration:none">' + esc(trunc(td.deckUrl.replace(/^https?:\/\//, ''), 28)) + '</a></td>' +
+      '<td>' + new Date(td.createdAt).toLocaleDateString() + '</td>' +
+      '<td style="text-align:center">' + count + '</td>' +
+      '<td>' +
+        '<div style="display:flex;gap:6px;align-items:center">' +
+          (expired ? '<span class="badge-revoked">Expired</span>' : '<span class="badge-active">Active</span>') +
+          '<button class="btn-gray" style="padding:4px 10px;font-size:11px" data-copy="' + esc(sigUrl) + '">Copy link</button>' +
+          '<button class="btn-red" style="padding:4px 10px;font-size:11px" data-revoke="' + esc(tok) + '">Revoke</button>' +
+        '</div>' +
+      '</td>' +
+      '</tr>';
+  }).join('');
+
+  // Wire copy and revoke buttons
+  g('links-rows').querySelectorAll('[data-copy]').forEach(function(btn) {
+    btn.addEventListener('click', function() { copyText(btn.getAttribute('data-copy'), btn); });
+  });
+  g('links-rows').querySelectorAll('[data-revoke]').forEach(function(btn) {
+    btn.addEventListener('click', function() { revokeLink(btn.getAttribute('data-revoke')); });
+  });
+}
+
+function renderAudit() {
+  var sigs = adminData.sigs || [];
+  var n = sigs.length;
+  g('sig-count').textContent = n + ' signature' + (n !== 1 ? 's' : '') + ' on record';
+  g('audit-empty').style.display = n === 0 ? 'block' : 'none';
+  g('audit-tbl-wrap').style.display = n > 0 ? 'block' : 'none';
+  g('audit-rows').innerHTML = sigs.slice().reverse().map(function(s) {
+    var deck = s.deckUrl || '';
+    return '<tr>' +
+      '<td title="' + esc(s.name) + '">' + esc(s.name) + '</td>' +
+      '<td title="' + esc(s.email) + '">' + esc(s.email) + '</td>' +
+      '<td title="' + esc(s.company || '') + '">' + esc(s.company || '\u2014') + '</td>' +
+      '<td>' + new Date(s.ts).toLocaleDateString() + '</td>' +
+      '<td title="' + esc(s.label || '') + '">' + esc(s.label || '\u2014') + '</td>' +
+      '<td title="' + esc(deck) + '">' + (deck ? '<a href="' + esc(deck) + '" target="_blank" style="color:#4f62c2;text-decoration:none;font-size:11px">' + esc(trunc(deck.replace(/^https?:\/\//, ''), 22)) + '</a>' : '\u2014') + '</td>' +
+      '</tr>';
+  }).join('');
+}
+
+/* ── Links tab actions ───────────────────────────────────────────── */
+function genLink() {
+  var deckUrl = g('new-deck-url').value.trim();
+  var label = g('new-label').value.trim();
+  setErr('new-link-err', '');
+  if (!deckUrl) { setErr('new-link-err', 'Deck URL is required.'); return; }
+  // Client-side URL validation before round-trip
+  var validProto = false;
+  try { var p = new URL(deckUrl).protocol; validProto = p === 'https:' || p === 'http:'; } catch(e) {}
+  if (!validProto) { setErr('new-link-err', 'URL must start with https://'); return; }
+  var btn = g('btn-gen-link'); btn.textContent = 'Generating\u2026'; btn.style.opacity = '0.7';
+  apiFetch('admin-create-link', { password: adminPw, deckUrl: deckUrl, label: label }).then(function(d) {
+    btn.textContent = 'Generate signing link'; btn.style.opacity = '1';
+    g('link-result-url').textContent = d.signingUrl;
+    g('link-result').style.display = 'block';
+    g('link-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Refresh data
+    return apiFetch('admin-get-data', { password: adminPw }).then(function(data) {
+      adminData = data;
+      renderLinks();
+    });
+  }).catch(function(err) {
+    btn.textContent = 'Generate signing link'; btn.style.opacity = '1';
+    setErr('new-link-err', err.message);
+  });
+}
+
+function revokeLink(token) {
+  pendingRevokeToken = token;
+  g('revoke-confirm').style.display = 'block';
+  g('revoke-confirm').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function doRevokeConfirmed() {
+  var token = pendingRevokeToken;
+  if (!token) return;
+  pendingRevokeToken = null;
+  g('revoke-confirm').style.display = 'none';
+  var btn = g('btn-revoke-yes'); btn.textContent = 'Revoking\u2026'; btn.style.opacity = '0.7';
+  apiFetch('admin-revoke-link', { password: adminPw, token: token }).then(function() {
+    return apiFetch('admin-get-data', { password: adminPw });
+  }).then(function(data) {
+    adminData = data;
+    btn.textContent = 'Yes, revoke'; btn.style.opacity = '1';
+    renderLinks();
+    renderAudit();
+  }).catch(function(err) {
+    btn.textContent = 'Yes, revoke'; btn.style.opacity = '1';
+    setErr('new-link-err', 'Revoke failed: ' + err.message);
+    switchTab('links');
+  });
+}
+
+/* ── Audit tab actions ───────────────────────────────────────────── */
+function clearSigs() {
+  g('clear-confirm').style.display = 'none';
+  apiFetch('admin-clear-sigs', { password: adminPw }).then(function() {
+    adminData.sigs = [];
+    renderAudit();
+  }).catch(function(err) {
+    // Show error inline in audit panel rather than alert()
+    g('sig-count').textContent = 'Error clearing records: ' + err.message;
+  });
+}
+
+function exportCSV() {
+  var sigs = (adminData && adminData.sigs) || [];
+  var rows = [['Name','Company','Email','Timestamp','Version','Label','Deck URL'].join(',')].concat(
+    sigs.map(function(s) {
+      return [s.name, s.company||'', s.email, s.ts, s.ver||'1.0', s.label||'', s.deckUrl||'']
+        .map(function(v){ return '"' + (v==null?'':String(v)).replace(/"/g,'""') + '"'; }).join(',');
+    })
+  ).join('\n');
+  var u = URL.createObjectURL(new Blob([rows], { type: 'text/csv' }));
+  var a = document.createElement('a'); a.href = u;
+  a.download = 'jobwell-audit-' + new Date().toISOString().slice(0,10) + '.csv'; a.click();
+  setTimeout(function(){ URL.revokeObjectURL(u); }, 1000);
+}
+
+/* ── Settings tab ────────────────────────────────────────────────── */
+function saveSettings() {
+  var btn = g('btn-settings-save');
+  setErr('settings-err', '');
+  btn.textContent = 'Saving\u2026'; btn.style.opacity = '0.7';
+  var payload = {
+    password: adminPw,
+    title: g('cfg-title').value.trim(),
+    bodyText: g('cfg-body-ta').value.trim(),
+    version: g('cfg-ver').value.trim()
+  };
+  // Only include newPassword if the field has content — omitting it entirely
+  // tells the server to keep the current password, avoiding any ambiguity
+  var newPw = g('cfg-pw').value;
+  if (newPw) payload.newPassword = newPw;
+  apiFetch('admin-save-config', payload).then(function() {
+    btn.textContent = 'Save changes'; btn.style.opacity = '1';
+    g('cfg-pw').value = '';
+    flash('settings-ok');
+  }).catch(function(err) {
+    btn.textContent = 'Save changes'; btn.style.opacity = '1';
+    setErr('settings-err', err.message);
+  });
+}
+
+/* ── Tab switching ───────────────────────────────────────────────── */
+function switchTab(t) {
+  ['links','audit','settings'].forEach(function(id) {
+    var btn = g('tab-' + id), active = id === t;
+    btn.style.fontWeight = active ? '600' : '500';
+    btn.style.color = active ? '#4f62c2' : '#6a7490';
+    btn.style.borderBottom = active ? '3px solid #4f62c2' : '3px solid transparent';
+    btn.style.background = active ? '#fff' : 'transparent';
+    var p = g('panel-' + id);
+    p.classList.toggle('active', active);
+    p.style.display = active ? 'block' : 'none';
+  });
+}
+
+/* ── Copy helper ─────────────────────────────────────────────────── */
+function copyText(text, btn) {
+  var original = btn.textContent;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = '\u2713 Copied!';
+      setTimeout(function(){ btn.textContent = original; }, 2000);
+    }).catch(function() { fallbackCopy(text); });
+  } else { fallbackCopy(text); }
+}
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+}
+
+boot();
+})();
+</script>
+</body>
+</html>
